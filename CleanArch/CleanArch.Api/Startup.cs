@@ -1,3 +1,4 @@
+using CleanArch.Api.Configuration;
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
 using MediatR;
@@ -34,6 +35,7 @@ namespace CleanArch.Api
                 options.UseSqlServer(Configuration.GetConnectionString("UniversityDBConnection"));
             });
             services.AddMediatR(typeof(Startup));
+            services.RegisterAutomapper();
             RegisterServices(services);
 
         }

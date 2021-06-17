@@ -22,11 +22,11 @@ namespace CleanArch.Infra.Data.Repositories
             _context.SaveChanges();
         }
 
-        public IEnumerable<Course> GetCourses()
+        public IQueryable<Course> GetCourses()
         {
             try
             {
-                return _context.Courses.ToArray();
+                return _context.Courses;
             }
             catch (Exception e)
             {
